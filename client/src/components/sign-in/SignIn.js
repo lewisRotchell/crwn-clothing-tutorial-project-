@@ -46,9 +46,8 @@ const SignIn = () => {
           handleChange={handleChange}
           required
         />
-        <CustomButton type="submit" value="Submit Form">
-          Sign In
-        </CustomButton>
+        <CustomButton type="submit">Sign In</CustomButton>
+        <CustomButton type="submit">Sign In With Google</CustomButton>
       </form>
     </div>
   );
