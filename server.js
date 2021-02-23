@@ -17,8 +17,8 @@ mongoose
     useFindAndModify: false,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("DB connection succesful"));
-// .catch((err) => console.log('error'));
+  .then(() => console.log("DB connection succesful"))
+  .catch((err) => console.err(err));
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {

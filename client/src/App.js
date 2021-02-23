@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Homepage from "./pages/homepage/Homepage";
 import { Switch, Route } from "react-router-dom";
@@ -5,7 +6,8 @@ import Shop from "./pages/shop/Shop";
 import Header from "./components/header/Header";
 import SignInAndSignUp from "./pages/sign-in-and-sign-out/SignInAndSignUp";
 
-function App(props) {
+function App() {
+  const [currentUser, setCurrentUser] = useState(null);
   return (
     <div>
       <Header />

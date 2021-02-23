@@ -47,7 +47,7 @@ const SignIn = () => {
           required
         />
         <CustomButton type="submit">Sign In</CustomButton>
-        <CustomButton type="submit">Sign In With Google</CustomButton>
+        <CustomButton> Sign In With Google </CustomButton>
       </form>
     </div>
   );
