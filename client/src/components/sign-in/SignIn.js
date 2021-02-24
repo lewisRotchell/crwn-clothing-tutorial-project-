@@ -3,6 +3,8 @@ import CustomButton from "../custom-button/CustomButton";
 import FormInput from "../form-input/FormInput";
 import "./signin.scss";
 
+import { signInWithGoogle } from "../../firebase/firebaseUtils";
+
 const SignIn = () => {
   const [user, setUser] = useState({
     email: "",
@@ -26,7 +28,7 @@ const SignIn = () => {
 
   return (
     <div className="sign-in">
-      <h2>I already have an avccount</h2>
+      <h2>I already have an account</h2>
       <span>Sign in with your email and password</span>
 
       <form onSubmit={handleSubmit}>
@@ -46,11 +48,18 @@ const SignIn = () => {
           handleChange={handleChange}
           required
         />
-        <CustomButton type="submit">Sign In</CustomButton>
-        <CustomButton> Sign In With Google </CustomButton>
+        <div className="buttons">
+          <CustomButton type="submit">Sign In</CustomButton>
+          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+            {" "}
+            Sign In With Google{" "}
+          </CustomButton>
+        </div>
       </form>
     </div>
   );
 };
+
+//isGoogleSignIn gets auto rendered to true
 
 export default SignIn;
