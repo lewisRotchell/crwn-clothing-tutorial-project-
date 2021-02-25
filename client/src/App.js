@@ -35,7 +35,7 @@ function App() {
   // }, [currentUser]);
   return (
     <div>
-      <Header currentUser={currentUser} />
+      <Header />
       <Switch>
         <Route exact path="/" component={Homepage}></Route>
         <Route path="/shop" component={Shop}></Route>
