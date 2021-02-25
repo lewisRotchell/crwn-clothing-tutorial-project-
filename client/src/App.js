@@ -30,9 +30,9 @@ function App() {
     //when onauthstatechanged is called it calls an unsubscribe function
     return () => unsubscribeFromAuth();
   }, []);
-  useEffect(() => {
-    console.log(currentUser);
-  }, [currentUser]);
+  // useEffect(() => {
+  //   console.log(currentUser);
+  // }, [currentUser]);
   return (
     <div>
       <Header currentUser={currentUser} />
