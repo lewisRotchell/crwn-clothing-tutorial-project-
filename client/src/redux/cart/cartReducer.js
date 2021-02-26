@@ -1,8 +1,10 @@
 import React from "react";
-import { TOGGLE_CART_HIDDEN } from "./cartTypes";
+import { TOGGLE_CART_HIDDEN, ADD_ITEM } from "./cartTypes";
+import { addItemToCart } from "./cart.utils";
 
 const initialState = {
   hidden: true,
+  cartItems: [],
 };
 
 const cartReducer = (state = initialState, action) => {
@@ -11,6 +13,11 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         hidden: !state.hidden,
+      };
+    case ADD_ITEM:
+      return {
+        ...state,
+        cartItems: addItemToCart(state.cartItems, action.payload),
       };
     default:
       return state;
